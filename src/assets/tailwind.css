@@ -5,38 +5,38 @@
 @tailwind utilities;
 
 .events {
-    @apply grid grid-cols-3 gap-4
+    @apply grid grid-cols-4 gap-4
 }
 
 .event-card:nth-child(odd) {
-    @apply border border-cyan-400 p-4 bg-cyan-400
+    @apply border border-cyan-400 p-4 bg-cyan-400 rounded-lg
 }
 
 .event-card:nth-child(even) {
-    @apply border border-orange-400 p-4 bg-orange-400
+    @apply border border-orange-400 p-4 bg-orange-400 rounded-lg
 }
 
 .event-card:nth-child(odd):hover {
-    @apply cursor-pointer drop-shadow-xl shadow-cyan-700 border-cyan-300 bg-cyan-300
+    @apply cursor-pointer drop-shadow-xl shadow-cyan-700 border-cyan-300 bg-cyan-300 animate-pulse 
 }
 
 .event-card:nth-child(even):hover {
-    @apply cursor-pointer drop-shadow-xl shadow-cyan-700 border-orange-300 bg-orange-300
+    @apply cursor-pointer drop-shadow-xl shadow-cyan-700 border-orange-300 bg-orange-300 animate-pulse
 }
 
 .event-card h3, .event h3 {
-    @apply text-lg font-bold 
+    @apply text-lg font-bold mt-2
 }
 
 .event-card h4, .event h4 {
-    @apply text-sm font-bold text-gray-500
+    @apply text-xs font-bold text-gray-900 mt-2
 }
 
-.event-card span, .event span {
+.event-card span, .event span, .event p {
     @apply text-sm
 }
 
 .event {
-    @apply container mx-auto w-2/6 p-4 border border-cyan-300 bg-cyan-300
+    @apply container mx-auto w-2/6 p-4 border border-cyan-300 bg-cyan-300 rounded-lg
 }
 
