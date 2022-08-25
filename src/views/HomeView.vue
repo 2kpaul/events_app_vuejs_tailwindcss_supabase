@@ -23,10 +23,18 @@ export default {
     EventService
       .getEvents()
       .then(response => {
+        if (!response.data) {
+          this.$router.push({
+            name: 'NetworkError'
+          })
+        }
         this.events = response.data
       })
       .catch(error => {
         console.log(error)
+        this.$router.push({
+          name: 'NetworkError'
+        })
       })
   }
 }
