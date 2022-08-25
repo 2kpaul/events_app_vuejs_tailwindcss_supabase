@@ -1,10 +1,13 @@
 <template>
-  <div v-if="event" class="event">
-    <span>@{{ event.time }} on {{ event.date }} @{{ event.location }}</span>
-    <h3>{{ event.title }}</h3>
-    <p>{{ event.description }}</p>
-    <h4>by {{ event.organizer }}</h4>
-  </div>
+<div>
+  <router-view :event="event" />
+  <nav>
+    <router-link :to="{ name: 'EventDetails' }">Details</router-link> |
+    <router-link :to="{ name: 'EventRegister' }">Register</router-link> |
+    <router-link :to="{ name: 'EventEdit' }">Edit</router-link>
+  </nav>
+</div>
+
 </template>
 
 <script>
