@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import router from '@/router'
 import EventService from '@/services/EventService'
 
 export default createStore({
@@ -21,7 +22,7 @@ export default createStore({
       EventService.getEvents()
         .then(response => {
           if (!response.data) {
-            this.$router.push({
+            router.push({
               name: 'NetworkError'
             })
           }
@@ -29,7 +30,7 @@ export default createStore({
         })
         .catch(error => {
           console.log(error)
-          this.$router.push({
+          router.push({
             name: 'NetworkError'
           })
         })
@@ -38,7 +39,7 @@ export default createStore({
       EventService.getEvent(id)
         .then(response => {
           if (!response.data[0]) {
-            this.$router.push({
+            router.push({
               name: '404Resource',
               params: { resource: 'event' }
             })
@@ -47,12 +48,12 @@ export default createStore({
         })
         .catch(error => {
           if (error.response && error.response === 404) {
-            this.$router.push({
+            router.push({
               name: '404Resource',
               params: { resource: 'event' }
             })
           } else {
-            this.$router.push({
+            router.push({
               name: 'NetworkError'
             })
           }
